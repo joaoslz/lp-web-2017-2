@@ -1,0 +1,103 @@
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2 {
+	color: rgb(49, 178, 49);
+	margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.container {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+.texto-principal {
+	text-align: justify;
+	font-size: 22px;
+	line-height: 140%;
+    margin-bottom: 15px;
+	
+}
+
+.blog-post {
+	width: 75%;
+	float: left;
+	padding-right: 20px;
+	position: relative;
+}
+
+.outros-posts {
+	width: 25%;
+	float: left;
+	padding: 20px;
+/*
+    position: fixed;
+	right: 10px;
+	top: 30px;
+*/
+}
+
+.link-posts {
+	margin-bottom: 35px;
+}
+
+.link-posts:first-child {
+	margin-top: 20px;
+}
+
+footer {
+    border-top: 1px SOLID #CCC;
+	clear: both;
+	padding-top: 20px;
+}
+
+figure .foto-autor,
+figure .nome-autor {
+	float: left;
+}
+figure .foto-autor {
+	border-radius: 50%;
+	width: 100px;
+	height: auto;
+}
+
+figure .nome-autor {
+	font-size: 18px;
+	margin-top: 35px;
+	margin-left: 10px;
+}
+
+.blog-post .img-blog {
+	width: 180px;
+	height: auto;
+	/*display: none;
+	
+	position: relative;
+	left: 150px;
+	top: 20px;*/
+}
+
+.data-post {
+	position: absolute;
+	top: 25px;
+	right: 0px;
+    padding-right: 30px;
+}

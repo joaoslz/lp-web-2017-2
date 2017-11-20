@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>Meu primeiro Post</title>
+	<link rel="stylesheet" href="css/estrutura.css">
+	<link rel="stylesheet" href="css/tipografia.css">
+	<link rel="stylesheet" href="css/blog.css">
+	<link rel="stylesheet" href="css/formulario.css">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+</head>
+
+<body>
+	<main class="container">
+		<section class="blog-post">
+			<h1 class="titulo-post">Blog do Fulano da Silva</h1>
+			<p class="data-post">08 de Maio de 2017</p>
+
+			<h2 class="titulo-peso-2">Formulário de Contato</h2>
+
+			<form>
+
+				<fieldset>
+					<legend>Dados Pessoais</legend>
+					<label for="nome">Nome:</label>
+					<input id="nome" type="text" name="nome" 
+					       autofocus="autofocus"
+					       placeholder="Nome Completo" required="required"
+					       pattern="[A-Za-z]{3,}">
+
+					<label for="email">Email:</label> 
+					<input id="email" type="email" name="email">
+
+				</fieldset>
+
+				<fieldset>
+					<legend>Assunto</legend>
+					<label>
+			    <input type="radio" name="assunto"> 
+			    Dúvida sobre HTML/CSS
+			 </label>
+					<label>
+			    <input type="radio" name="assunto"> 
+			    Dúvida sobre JavaScript  
+			 </label>
+					<label>
+			   <input type="radio" name="assunto"> Desenvolvimento de Sistemas Web
+			 </label>
+					<label for="mensagem">Mensagem:</label>
+					<textarea name="" id="mensagem" cols="30" rows="8">	 </textarea>
+				</fieldset>
+				
+				<button type="submit" class="btn-principal">Enviar <strong>Nova Mensagem</strong></button>
+
+			</form>
+
+		</section>
+
+		<aside class="outros-posts">
+			<div class="outro-post"><a href="#">Javascritp- cidadão de primeira classe</a></div>
+			<div class="outro-post"><a href="#">NodeJS - Framework do momento</a></div>
+			<div class="outro-post"><a href="#">O melhor post de todos</a></div>
+		</aside>
+
+		<footer class="clearfix">
+
+			<figure class="foto-autor">
+				<img src="imagens/autor_blog.jpg" alt="Fotor do autor do Post">
+				<figcaption class="nome-autor">Fulano da Silva &copy;</figcaption>
+			</figure>
+		</footer>
+	</main>
+</body>
+
+</html>
