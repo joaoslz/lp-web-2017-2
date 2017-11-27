@@ -12,7 +12,8 @@ fieldset:first-child {
 legend {
 	background-color: #CCC;
 	font-size: 1.3rem;
-	padding: 0.2rem;
+	padding: 0.4rem;
+    margin-bottom: 0.3rem;
 }
 
 
@@ -31,6 +32,9 @@ textarea {
 
 .btn-principal {
 	background-color: #3B8686;
+    padding: 0.5rem;
+  float: right;
 }
+
 
 
