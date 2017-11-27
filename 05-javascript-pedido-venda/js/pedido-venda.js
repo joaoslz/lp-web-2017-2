@@ -1,32 +1,28 @@
 
-var inputs = [
-
+let inputs = [
     document.querySelector('#nome'),
     document.querySelector('#quantidade'),
     document.querySelector('#valor')
 ];
 
+let tbody = document.querySelector('table tbody')
 
-function criaItemPedido(event) {
+document.querySelector('.form')
+    .addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    event.preventDefault();
-
-    for (var i = 0; i < inputs.length; i++) {
-        console.log(inputs[i].value);
-    }
-
-
-}
-
-
-var soma = function (a, b) {
-  return ( a + b );
-}
-
-console.log( soma(4, 5) );
+/*         
+        for (let i = 0; i < inputs.length; i++) {
+            
+            console.log(inputs[i].value);
+            let j = 10;
+        } */
+        
+       inputs.forEach(function(input) {
+           console.log(input.value);
+       });
 
 
-
-document.querySelector('.form').addEventListener('submit', criaItemPedido );
+    });
 
 
