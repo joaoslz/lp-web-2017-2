@@ -1,49 +1,53 @@
 
-let inputs = [
-    document.querySelector('#nome').value,
-    document.querySelector('#quantidade').value,
-    document.querySelector('#valor').value
-];
+let tbody = document.querySelector('table tbody');
+let form = document.querySelector('.form');
 
-let tbody = document.querySelector('table tbody')
+let pedido = constroiPedido();
 
-document.querySelector('.form')
-    .addEventListener('submit', function (event) {
-        event.preventDefault();
-    
-       let tr = document.createElement('tr'); 
-       
-       inputs.forEach( function(valor ) {
-            let td = document.createElement('td');
+form.addEventListener('submit', function (event) {
 
-            td.textContent = valor;
-            tr.appendChild(td);
+    event.preventDefault();
 
+    let item = constroiItemPedido(
+        form.querySelector('#nome').value,
+        form.querySelector('#quantidade').value,
+        form.querySelector('#valor').value
+    );
+    pedido.adiciona(item);
+    constroiTrItemPedido(item);
+    atualizaTrTotalPedido();
 
-       });
+});
 
-       // calcula subtotal e cria a celula
-       let subTotal =  parseFloat(inputs[1]) * parseFloat(inputs[2]) ;
-       let tdSubTotal = document.createElement('td');
-      
-       tdSubTotal.textContent = subTotal;
-       tdSubTotal.classList = 'text-center';
-       tdSubTotal.style.backgroundColor = 'orange';
-
-       tr.appendChild(tdSubTotal ); 
-       
-      // atualiza o Total do Pedido
-      let tdTotal = document.querySelector('.js-total');
-
-      let total = parseFloat ( tdTotal.textContent ) 
-                  + subTotal ;
-
-       tdTotal.textContent = total.toFixed(2);
-
-       tbody.appendChild(tr);
+function adicionaTD(valor) {
+    let td = document.createElement('td');
+    td.textContent = valor;
+    return td;
+}
 
 
+function constroiTrItemPedido(item) {
+    let tr = document.createElement('tr');
 
-    });
+    tr.appendChild( adicionaTD(item.nome));
+    tr.appendChild( adicionaTD(item.quantidade));
+    tr.appendChild( adicionaTD(item.valor));
+    tr.appendChild( adicionaTD(item.getSubTotal() ) );
 
+    tbody.appendChild(tr);
+
+
+    /*
+        tdSubTotal.classList = 'text-center';
+        tdSubTotal.style.backgroundColor = 'orange';
+    */
+}
+
+
+function atualizaTrTotalPedido() {
+
+    let tdTotal = document.querySelector('.js-total');
+
+    tdTotal.textContent = pedido.getTotal().toFixed(2);
+}
 
