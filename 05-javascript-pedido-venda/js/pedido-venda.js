@@ -13,11 +13,52 @@ form.addEventListener('submit', function (event) {
         form.querySelector('#quantidade').value,
         form.querySelector('#valor').value
     );
-    pedido.adiciona(item);
-    constroiTrItemPedido(item);
-    atualizaTrTotalPedido();
+   
+    let erros = validaFormulario(item);
+
+    if (erros.length == 0 ) {
+        pedido.adiciona(item);
+        constroiTrItemPedido(item);
+        atualizaTrTotalPedido();
+  
+    } else {
+        console.log(erros );
+        let ul = document.querySelector('#js-msg-erros');
+        ul.classList = 'alert alert-danger';
+
+        let lis =ul.querySelectorAll('#js-msg-erros > li');
+
+        lis.forEach(function(li) {
+            li.remove();
+        });
+        
+        erros.forEach(function(erro) { 
+           let li = document.createElement('li');
+           li.textContent = erro;
+           ul.appendChild(li);
+        });
+
+
+    }
 
 });
+
+
+function validaFormulario(item) {
+
+    let msgErros = [];
+
+     if (item.nome.trim() == '') {
+         msgErros.push('Informe um nome válido para o produto');
+     }
+
+     if (item.quantidade < 1 ) {
+        msgErros.push('Informe uma quantidade >= 1');
+    }
+
+     return msgErros;
+}
+
 
 function adicionaTD(valor) {
     let td = document.createElement('td');
