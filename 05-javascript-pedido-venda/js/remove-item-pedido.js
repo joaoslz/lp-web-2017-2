@@ -3,19 +3,23 @@
 let tbodyRemove = document.querySelector('table tbody');
 
 
-tbodyRemove.addEventListener('click', function(event) {
-        
-    //console.log(event.target  );
+tbodyRemove.addEventListener('click', function (event) {
 
-    let tr = event.target.parentNode;
-    console.log(tr);
-    tr.classList = 'oculta-elemento';
+    console.log(event.target);
+    console.log(event.target.textContent);
 
-    setTimeout(function(){
-        tr.remove();
-    }, 1000 );
-    
+    if (event.target.textContent == 'remover') {
         
+        let tr = event.target.parentNode.parentNode;
+
+        tr.classList = 'oculta-elemento';
+
+        setTimeout(function () {
+            tr.remove();
+        }, 1000);
+
+    }
+
 });
 
 

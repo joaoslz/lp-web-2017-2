@@ -14,8 +14,17 @@ function constroiPedido() {
                 total = total + item.getSubTotal();
             });
             return total;
-        }
+        },
 
+        remove: function(item ) {
+          
+            for(let i = 0; i < this.itens.length; i++) {
+
+               if ( this.itens[i].comparaItem(item ) ) {
+                  console.log('Remove ' + itens[i]);
+               }
+            }
+        }
     };
     return pedido;
 }
