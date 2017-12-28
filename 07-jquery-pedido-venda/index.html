@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido de Venda</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/form-pedido.css">
+
+</head>
+
+<body class="container">
+
+    <h1 id="titulo" class="text-center">Novo Pedido</h1>
+
+    <ul class="mensagem-erro">
+    </ul>
+
+    <form class="form">
+
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" class="form-control" required autofocus/>
+        </div>
+
+        <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade" class="form-control" value="1" />
+            <!--min="1" step="1" -->
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input id="valor" type="text" class="form-control" />
+            <!--value="0.0" min="0.01" step="0.01" -->
+        </div>
+        <div class="text-center">
+            <button id="btn-cadastrar" class="btn btn-primary" type="submit">Incluir Produtos</button>
+            <button class="btn btn-default" type="reset">Limpar Formulário</button>
+        </div>
+
+    </form>
+
+    <br>
+    <br>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>QUANTIDADE</th>
+                <th>VALOR UNITÁRIO</th>
+                <th>SUBTOTAL</th>
+                <th>AÇÃO</th>
+            </tr>
+        </thead>
+
+        <tbody>
+           <!-- <tr>
+                <td>Computador</td>
+                <td>1</td>
+                <td>30</td>
+                <td class="text-center">30</td>
+                <td class="text-center">
+                    <a href="" title="Excluir" id="botao-remove-item">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Tablet</td>
+                <td>1</td>
+                <td>300</td>
+                <td class="text-center">300</td>
+                <td class="text-center">
+                   <a title="Excluir" id="botao-remove-item" > 
+                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                   </a>
+                </td>
+            </tr>-->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-right">Total</td>
+                <td id="total"></td>
+            </tr>
+
+        </tfoot>
+    </table>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/ItemPedido.js"></script>
+    <script src="js/Pedido.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/remove-itemPedido.js"></script>
+
+</body>
+
+</html>

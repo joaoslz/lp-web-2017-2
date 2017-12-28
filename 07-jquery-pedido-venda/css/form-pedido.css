@@ -1,0 +1,13 @@
+
+.mensagem-erro {
+    color: coral;
+}
+
+.evento-remocao {
+    opacity: 0;
+    transition: 0.7s;
+}
+
+.linha-destaque {
+    background-color:aquamarine;
+}
