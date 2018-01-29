@@ -4,13 +4,14 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
+app.get('/', (req, resp) => resp.render('index') );
+
+app.get('/produtos', (req, resp) => resp.render('produtos/listagem') );
+
 app.listen(3000, function() {
     console.log('Servidor executando com express ...');
 });
 
-app.get('/', (req, resp) => resp.render('/index') );
-
-app.get('/produtos', (req, resp) => resp.render('/produtos/listagem') );
 
 /* 
 app.get('/produtos', function(req, resp) {
@@ -25,8 +26,8 @@ app.get('/usuarios', (req, resp) => resp.send('<html><h1>Módulo de Usuários</h
  */
 
 
-
-/* const server = http.createServer(function(req, resp) {
+ /* let http = require('http');
+ const server = http.createServer(function(req, resp) {
 
     if (req.url == '/produtos') {
        resp.end('<html><h1>Listagem de Produtos</h1></html>');
@@ -39,5 +40,6 @@ app.get('/usuarios', (req, resp) => resp.send('<html><h1>Módulo de Usuários</h
     }  
 });
 
-server.listen(3000); */
+server.listen(3000); 
 
+ */
